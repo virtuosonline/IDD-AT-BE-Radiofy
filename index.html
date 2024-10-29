@@ -17,24 +17,16 @@
                     <img src="icons/logo.png" alt="Logo Icon" class="logo-icon"> 
                 </a>
             </div>
-            <div>
-                <button id="pdfifyButton" class="pdfify-button">PDFify Pro</button>
-                <!-- Modal Structure -->
+            <div class="search-div">
+                <!--<button id="pdfifyButton" class="pdfify-button">PDFify Pro</button>
                 <div id="pdfifyModal" class="modal">
                     <div class="modal-content">
                         <span class="close-btn">&times;</span>
-                        <div class="radio-container">
-                            <h1 style="color: #000;">Radio</h1>
-                            <audio id="audio" controls>
-                                <source id="audio-source" src="" type="audio/mpeg">
-                            </audio>
-                            <input type="text" class="search-input" id="search" placeholder="Search channels...">
-                            <div class="channel-list" id="channel-list"></div>
-                        </div>
+
                     </div>
-                </div>
+                </div>-->
             </div>
-            <div class="search-div">
+            <div >
                 <form id="search-form" method="GET">
                     <div class="input-container">
                         <img src="icons/search-icon.png" alt="Search Icon" class="search-icon" id="search-icon">
@@ -55,6 +47,14 @@
                     <input type="text" name="p" id="main-search-input" placeholder="Search..." required>
                 </div>
             </form>
+            <div class="radio-container">
+                <h1 style="color: #000;">Radio</h1>
+                <audio id="audio" controls>
+                    <source id="audio-source" src="" type="audio/mpeg">
+                </audio>
+                <input type="text" class="search-input" id="search" placeholder="Search channels...">
+                <div class="channel-list" id="channel-list"></div>
+            </div>
             <div id="city" class="city"></div>
             <div id="forecast-detailed" class="forecast-detailed"></div>
         </div>

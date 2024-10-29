@@ -49,32 +49,30 @@ function updateDateTime() {
     document.getElementById('current-time').textContent = now.toLocaleTimeString(); 
 }
 
-// Elements
+/*
 const pdfifyButton = document.getElementById("pdfifyButton");
 const pdfifyModal = document.getElementById("pdfifyModal");
 const closeModalBtn = document.querySelector(".close-btn");
 
-// Open Radio Modal
 pdfifyButton.onclick = function() {
   pdfifyModal.style.display = "block";
 };
 
-// Close Modal when clicking on close button
 closeModalBtn.onclick = function() {
   pdfifyModal.style.display = "none";
 };
 
-// Close Modal when clicking outside the modal content
 window.onclick = function(event) {
   if (event.target === pdfifyModal) {
     pdfifyModal.style.display = "none";
   }
-};
+};*/
 
 
 const audio = document.getElementById('audio');
 const audioSource = document.getElementById('audio-source');
-const searchInput = document.getElementById('search');
+const searchRadioHeaderInput = document.getElementById('search');
+
 const channelList = document.getElementById('channel-list');
 
 // Fetch radio stations from the API
@@ -108,8 +106,8 @@ function displayChannels(stations) {
 }
 
 // Show channel list when the user starts typing
-searchInput.addEventListener('input', () => {
-    const filter = searchInput.value.toLowerCase();
+searchRadioHeaderInput.addEventListener('input', () => {
+    const filter = searchRadioHeaderInput.value.toLowerCase();
     const channelButtons = channelList.querySelectorAll('.channel-button');
     let hasVisibleChannels = false;
 
