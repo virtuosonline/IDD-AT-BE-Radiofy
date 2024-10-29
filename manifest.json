@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Radiofy Pro & Search",
+  "description": "Add the Radiofy Pro and Search extension to get a Radio Player tool by clicking the favicon on the toolbar and get web search results by Yahoo®",
+  "version": "0.0.1",
+  "icons": {
+    "64": "icons/logo.png"
+  },
+  "permissions": ["tabs", "contextMenus", "clipboardWrite", "storage", "search"],
+  "background": {
+    "scripts": ["background.js"], 
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": {
+      "64": "icons/logo.png"
+    }
+  },
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "name": "Radiofypro",
+      "search_url": "https://search.Radiofypro/search?p={searchTerms}",
+      "favicon_url": "icons/logo.png",
+      "is_default": true,
+      "keyword": "Radiofypro"
+    }
+  }
+}
