@@ -1,5 +1,7 @@
 # Radiofy Pro & Search Extension
-**Date:** October 29, 2024
+
+- **Version:** 0.2
+- **Date:** October 30, 2024
 
 ### Overview
 
@@ -36,7 +38,7 @@ The project includes the following files and structure:
 
 3. **index.html**  
     - HTML file displaying the extension's interface:
-      - Includes logo, search area, button to activate `PDFify Pro`, and a radio player display.
+      - Includes logo, search area, and a radio player display.
       - Shows radio stations using the search interface and filtering mechanism.
 
 4. **manifest.json**  
