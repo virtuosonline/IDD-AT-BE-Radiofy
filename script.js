@@ -49,26 +49,6 @@ function updateDateTime() {
     document.getElementById('current-time').textContent = now.toLocaleTimeString(); 
 }
 
-/*
-const pdfifyButton = document.getElementById("pdfifyButton");
-const pdfifyModal = document.getElementById("pdfifyModal");
-const closeModalBtn = document.querySelector(".close-btn");
-
-pdfifyButton.onclick = function() {
-  pdfifyModal.style.display = "block";
-};
-
-closeModalBtn.onclick = function() {
-  pdfifyModal.style.display = "none";
-};
-
-window.onclick = function(event) {
-  if (event.target === pdfifyModal) {
-    pdfifyModal.style.display = "none";
-  }
-};*/
-
-
 const audio = document.getElementById('audio');
 const audioSource = document.getElementById('audio-source');
 const searchRadioHeaderInput = document.getElementById('search');
