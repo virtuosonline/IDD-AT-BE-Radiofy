@@ -53,10 +53,10 @@ The project includes the following files and structure:
       - Displays the current date and time.
       - Contains code for searching and displaying radio stations based on an API, as well as automatically updating the station list according to user input.
 
-- **GOOGLE_APPS_SCRIPT.js**  
+6. **GOOGLE_APPS_SCRIPT.js**  
   You need to copy this code to google app script
 
-6. **styles.css**  
+7. **styles.css**  
     - CSS file defining the styles of the interface.
 
 ---
