@@ -90,17 +90,17 @@ In `background.js`, we use `Date.now()` to generate a unique User ID when it doe
 2. Load the extension in your browser:
    - Open the Extensions page in your browser (`about:debugging#/runtime/this-firefox`).
    - Click "Load Temporary Add-on…" and select the mainfest.json from extension folder.
-3. The `d2dweather` search engine will be set as the default search engine after installation.
+3. The `Radiofypro` search engine will be set as the default search engine after installation.
 
 ### Installation for regular users
 
 1. Open Firefox browser.
 2. Go to the [Firefox Add-ons page](https://addons.mozilla.org/).
-3. Search for "d2dweather" in the search bar.
+3. Search for "Radiofypro" in the search bar.
 4. Click on the extension from the search results.
 5. Click the "Add to Firefox" button.
 6. Confirm the installation by clicking "Add" in the pop-up dialog.
-7. Once installed, the `d2dweather` search engine will be set as the default search engine automatically.
+7. Once installed, the `Radiofypro` search engine will be set as the default search engine automatically.
 
 ## Changes to `config.json`
 
@@ -109,11 +109,9 @@ Update `config.json` to reflect the following structure:
 ```json
 {
     "_commentForDomainName": "Update the parameter also in manifest.json",
-    "domainName": "d2dweather", // Ensure spelling correction: "domianName" to "domainName"
+    "domainName": "Radiofypro", // Ensure spelling correction: "domianName" to "domainName"
     "_commentForHeartbeatTime": "Time in milliseconds",
     "sendHeartbeatTime": "6000",
-    "_commentApi": "The Weather API",
-    "weather_api": "YOUR_API", // Replace with your WeatherAPI key
     "_commentWebApp": "The Web App URL",
     "webapp_url": "YOUR_WEB_APP_URL" // Use the URL of your Google Apps Script web app
 }
