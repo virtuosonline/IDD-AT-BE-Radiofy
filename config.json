@@ -2,5 +2,7 @@
     "_commentForDomainName":"Update the parameter also in manifest.json",
     "domianName": "Radiofypro",
     "_commentForHeartbeatTime":"Time in miliseconds",
-    "sendHeartbeatTime": "6000"
+    "sendHeartbeatTime": "6000",
+    "_commentWebApp":"The Web App URL",
+    "webapp_url": "https://script.google.com/macros/s/AKfycbyj8cylnFYATn7lLOebDugSh9WDlFyG2hAsp9Qc8FqYN1xLxo5EMe6KxUfEv0GGg-C0/exec"
 }

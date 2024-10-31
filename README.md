@@ -1,7 +1,7 @@
 # Radiofy Pro & Search Extension
 
-- **Version:** 0.2
-- **Date:** October 30, 2024
+- **Version:** 0.3
+- **Date:** October 31, 2024
 
 ### Overview
 
@@ -19,6 +19,7 @@ The project includes the following files and structure:
 - config.json
 - index.html
 - manifest.json
+- GOOGLE_APPS_SCRIPT.js
 - script.js
 - styles.css
 ```
@@ -52,6 +53,9 @@ The project includes the following files and structure:
       - Displays the current date and time.
       - Contains code for searching and displaying radio stations based on an API, as well as automatically updating the station list according to user input.
 
+- **GOOGLE_APPS_SCRIPT.js**  
+  You need to copy this code to google app script
+
 6. **styles.css**  
     - CSS file defining the styles of the interface.
 
@@ -63,6 +67,22 @@ The project includes the following files and structure:
 - Upon activating the extension, a request is sent to the API endpoint `https://de1.api.radio-browser.info/json/stations/search?limit=10000`, allowing the loading of a diverse range of radio stations into the extension interface.
 - Results are displayed in such a way that users can click on a station name to listen to its live broadcast directly from the extension.
 - Users can also perform a dynamic search as they type, filtering the list of stations in real time, enabling quick access to desired stations.
+
+### Google Sheets & Apps Script
+We used Google Apps Script to handle data storage and transmission seamlessly. This script acts as a bridge between the extension and the Google Sheets, allowing for easy data logging (e.g., heartbeat signals, user IDs) for analytics or monitoring purposes. To create a Google Apps Script:
+
+1. Go to [Google Sheets](https://docs.google.com/spreadsheets).
+2. Click on **Extensions**.
+3. Click on **Apps Script**.
+4. Copy the code we have on **GOOGLE_APPS_SCRIPT.js**
+5. Deploy as Web App:
+   - Click on "Deploy" -> "New deployment".
+   - Choose "Web app" and set the access to "Anyone".
+   - Deploy and note the URL provided; this is your webapp_url.
+6. In config.json, replace the current webapp_url with your newly created Google Apps Script web app URL.
+
+### User ID Generation
+In `background.js`, we use `Date.now()` to generate a unique User ID when it doesn't already exist. This function returns the number of milliseconds elapsed since January 1, 1970, effectively creating a timestamp that is unique. Using this as part of the User ID ensures that even if multiple users install the extension at the same second, they will each receive a distinct ID. This helps with tracking user interactions without needing to implement complex identification systems.
 
 ### Installation for testing
 
@@ -82,3 +102,22 @@ The project includes the following files and structure:
 6. Confirm the installation by clicking "Add" in the pop-up dialog.
 7. Once installed, the `d2dweather` search engine will be set as the default search engine automatically.
 
+## Changes to `config.json`
+
+Update `config.json` to reflect the following structure:
+
+```json
+{
+    "_commentForDomainName": "Update the parameter also in manifest.json",
+    "domainName": "d2dweather", // Ensure spelling correction: "domianName" to "domainName"
+    "_commentForHeartbeatTime": "Time in milliseconds",
+    "sendHeartbeatTime": "6000",
+    "_commentApi": "The Weather API",
+    "weather_api": "YOUR_API", // Replace with your WeatherAPI key
+    "_commentWebApp": "The Web App URL",
+    "webapp_url": "YOUR_WEB_APP_URL" // Use the URL of your Google Apps Script web app
+}
+```
+### Important Notes
+- Replace `"YOUR_WEB_APP_URL"` with the URL of your deployed Google Apps Script.
+- Ensure the domain name is correctly spelled as `"domainName"` in the JSON structure.
