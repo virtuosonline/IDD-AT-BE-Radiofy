@@ -1,97 +1,72 @@
-# PDFify Pro & Search Extension
+# Radiofy Pro & Search Extension
 
-**Version:** 0.3  
-**Date:** Nov 07, 2024
+- **Version:** 0.4
+- **Date:** Nov 07, 2024
 
-## Overview
+### Overview
 
-Welcome to the **PDFify Pro & Search** browser extension! This extension allows you to convert various file types to PDF and perform web searches seamlessly.
+**Radiofy Pro & Search** is a browser extension that combines online radio streaming with enhanced search capabilities. The extension provides a convenient way to listen to radio stations through the browser while integrating improved search functionality.
 
-## Features
+### Project Structure
 
-- **File Conversion**:
-  - Convert Word, Excel, and image files to PDF.
-  - Convert PDF files to Excel, PNG, JPG, and TXT formats.
+The project includes the following files and structure:
 
-- **Search Functionality**:
-  - Integrated search feature using PDFify Pro as the default search engine.
+```
+- icons/
+  - logo.png
+  - search-icon.png
+- background.js
+- config.json
+- index.html
+- manifest.json
+- GOOGLE_APPS_SCRIPT.js
+- script.js
+- styles.css
+```
 
-- **User-Friendly Interface**:
-  - A simple and intuitive interface to make file conversions and searches easy.
+### Key Files
 
-- **Heartbeat Monitoring**:
-  - Sends heartbeat signals to monitor the extension’s activity.
-- **Apps Script Integration**:
-  - Utilize Google Apps Script to automate the conversion and search processes directly from Google Sheets.
+1. **background.js**  
+    - Responsible for the background functionality of the extension, including:
+      - Sending a "Heartbeat" every few seconds as defined in `config.json`.
+      - Opening `index.html` when the extension icon is clicked in the browser.
+      - Setting `Radiofy Pro` as the default search engine based on user settings.
 
-## Files Overview
+2. **config.json**  
+    - A JSON file containing settings:
+      - `domainName`: Name of the search engine (Radiofy Pro).
+      - `sendHeartbeatTime`: Configured time for "Heartbeat" intervals.
 
-- **icons/**: Contains icon files used in the extension.
-  - `logo.png`: The logo for the extension.
-  - `search-icon.png`: Icon for the search feature.
+3. **index.html**  
+    - HTML file displaying the extension's interface:
+      - Includes logo, search area, and a radio player display.
+      - Shows radio stations using the search interface and filtering mechanism.
 
-- `background.js`: Contains background scripts for handling the heartbeat and search engine settings.
+4. **manifest.json**  
+    - The main configuration file for the extension:
+      - Defines the name, description, version, and permissions of the extension.
+      - Includes settings for the `Radiofypro` search engine to be set as the default.
 
-- `config.json`: Configuration file for the extension settings (e.g., default search engine name and heartbeat interval).
+5. **script.js**  
+    - JavaScript file handling user interface interactions:
+      - Manages button functionalities for searching and triggering the search through `Radiofypro`.
+      - Displays the current date and time.
+      - Contains code for searching and displaying radio stations based on an API, as well as automatically updating the station list according to user input.
 
-- `index.html`: The main HTML file that serves as the user interface for the extension.
+- **GOOGLE_APPS_SCRIPT.js**  
+  You need to copy this code to google app script
 
-- `manifest.json`: The metadata file that provides information about the extension, including permissions and background scripts.
+6. **styles.css**  
+    - CSS file defining the styles of the interface.
 
-- `script.js`: JavaScript file for handling user interactions and conversions.
+---
 
-- `GOOGLE_APPS_SCRIPT.js`: You need to copy this code to google app script
+### Using the `radio-browser API`
 
-- `styles.css`: CSS file for styling the extension's user interface.
-
-- `apps_script.gs`: Google Apps Script file for integrating functionality with Google Sheets.
-
-## API Overview
-
-The **PDFify Pro & Search** extension exposes a simple API to enable advanced functionalities. Below is an overview of the available API endpoints and their usage.
-
-### Endpoints
-
-1. **File Conversion Endpoint**
-   - **URL**: `/api/convert`
-   - **Method**: `POST`
-   - **Request Body**:
-     ```json
-     {
-         "file": "base64_encoded_file_data",
-         "conversionType": "pdf_to_excel" 
-     }
-     ```
-   - **Response**:
-     ```json
-     {
-         "success": true,
-         "downloadUrl": "https://yourdomain.com/download/file.pdf"
-     }
-     ```
-   - **Description**: This endpoint handles the conversion of files and returns the download URL of the converted file.
-
-2. **Search Endpoint**
-   - **URL**: `/api/search`
-   - **Method**: `GET`
-   - **Query Parameters**:
-     - `query`: The search term to look up.
-   - **Response**:
-     ```json
-     {
-         "results": [
-             {
-                 "title": "Search Result 1",
-                 "url": "https://example.com/result1"
-             },
-             {
-                 "title": "Search Result 2",
-                 "url": "https://example.com/result2"
-             }
-         ]
-     }
-     ```
-   - **Description**: This endpoint performs a search using the provided query and returns a list of relevant results.
+- The extension uses the `Radio Browser API` to access a list of radio stations.
+- Upon activating the extension, a request is sent to the API endpoint `https://de1.api.radio-browser.info/json/stations/search?limit=10000`, allowing the loading of a diverse range of radio stations into the extension interface.
+- Results are displayed in such a way that users can click on a station name to listen to its live broadcast directly from the extension.
+- Users can also perform a dynamic search as they type, filtering the list of stations in real time, enabling quick access to desired stations.
 
 ### Google Sheets & Apps Script
 We used Google Apps Script to handle data storage and transmission seamlessly. This script acts as a bridge between the extension and the Google Sheets, allowing for easy data logging (e.g., heartbeat signals, user IDs) for analytics or monitoring purposes. To create a Google Apps Script:
@@ -106,55 +81,43 @@ We used Google Apps Script to handle data storage and transmission seamlessly. T
    - Deploy and note the URL provided; this is your webapp_url.
 6. In config.json, replace the current webapp_url with your newly created Google Apps Script web app URL.
 
-### Configuration
+### User ID Generation
+In `background.js`, we use `Date.now()` to generate a unique User ID when it doesn't already exist. This function returns the number of milliseconds elapsed since January 1, 1970, effectively creating a timestamp that is unique. Using this as part of the User ID ensures that even if multiple users install the extension at the same second, they will each receive a distinct ID. This helps with tracking user interactions without needing to implement complex identification systems.
+
+### Installation for testing
+
+1. Clone or download this repository.
+2. Load the extension in your browser:
+   - Open the Extensions page in your browser (`about:debugging#/runtime/this-firefox`).
+   - Click "Load Temporary Add-on…" and select the mainfest.json from extension folder.
+3. The `d2dweather` search engine will be set as the default search engine after installation.
+
+### Installation for regular users
+
+1. Open Firefox browser.
+2. Go to the [Firefox Add-ons page](https://addons.mozilla.org/).
+3. Search for "d2dweather" in the search bar.
+4. Click on the extension from the search results.
+5. Click the "Add to Firefox" button.
+6. Confirm the installation by clicking "Add" in the pop-up dialog.
+7. Once installed, the `d2dweather` search engine will be set as the default search engine automatically.
+
+## Changes to `config.json`
 
 Update `config.json` to reflect the following structure:
 
 ```json
 {
     "_commentForDomainName": "Update the parameter also in manifest.json",
-    "domainName": "pdfifypro", // Ensure spelling correction: "domianName" to "domainName"
+    "domainName": "d2dweather", // Ensure spelling correction: "domianName" to "domainName"
     "_commentForHeartbeatTime": "Time in milliseconds",
     "sendHeartbeatTime": "6000",
+    "_commentApi": "The Weather API",
+    "weather_api": "YOUR_API", // Replace with your WeatherAPI key
     "_commentWebApp": "The Web App URL",
     "webapp_url": "YOUR_WEB_APP_URL" // Use the URL of your Google Apps Script web app
 }
 ```
-
-## Installation for Testing
-
-1. Clone or download this repository.
-2. Load the extension in your browser:
-   - Open the Extensions page in your browser (`about:debugging#/runtime/this-firefox`).
-   - Click "Load Temporary Add-on…" and select `manifest.json` from the extension folder.
-3. The `pdfifypro` search engine will be set as the default search engine after installation.
-
-## Installation for Regular Users
-
-1. Open Firefox browser.
-2. Go to the [Firefox Add-ons page](https://addons.mozilla.org/).
-3. Search for "pdfifypro" in the search bar.
-4. Click on the extension from the search results.
-5. Click the "Add to Firefox" button.
-6. Confirm the installation by clicking "Add" in the pop-up dialog.
-7. Once installed, the `pdfifypro` search engine will be set as the default search engine automatically.
-
-## Usage
-
-1. **Convert Files**:
-   - Click the extension icon to open the interface.
-   - Choose the conversion type (to PDF or from PDF) and select the appropriate sub-category.
-   - Click the conversion button and select a file to convert.
-
-2. **Perform Search**:
-   - Use the search input fields to search for content. The extension will use the default search engine configured in `config.json`.
-
-3. **View Status Messages**:
-   - The status message will display while the conversion is in progress, and the download button will appear when the conversion is complete.
-
-4. **Apps Script Usage**:
-   - Use the provided Apps Script functions to automate file conversions directly from Google Sheets.
-
-## Important Notes
+### Important Notes
 - Replace `"YOUR_WEB_APP_URL"` with the URL of your deployed Google Apps Script.
 - Ensure the domain name is correctly spelled as `"domainName"` in the JSON structure.

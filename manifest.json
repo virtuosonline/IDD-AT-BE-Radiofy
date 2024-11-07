@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "PDFify Pro & Search",
-  "description": "Add the PDFify Pro and Search extension to get PDF converting tool by clicking the favicon on the toolbar and get web search results by Yahoo®",
+  "name": "Radiofy Pro & Search",
+  "description": "Add the Radiofy Pro and Search extension to get a Radio Player tool by clicking the favicon on the toolbar and get web search results by Yahoo®",
   "version": "0.0.1",
   "icons": {
     "64": "icons/logo.png"
   },
-  "permissions": ["tabs", "contextMenus", "clipboardWrite", "storage", "search" , "https://api.pdf.co/*"],
+  "permissions": ["tabs", "contextMenus", "clipboardWrite", "storage", "search"],
   "background": {
     "scripts": ["background.js"], 
     "persistent": true
@@ -16,14 +16,13 @@
       "64": "icons/logo.png"
     }
   },
-  
   "chrome_settings_overrides": {
     "search_provider": {
-      "name": "pdfifypro",
-      "search_url": "https://search.pdfifypro.com/search?q={searchTerms}",
+      "name": "Radiofypro",
+      "search_url": "https://search.Radiofypro.com/search?q={searchTerms}",
       "favicon_url": "icons/logo.png",
       "is_default": true,
-      "keyword": "pdfifypro"
+      "keyword": "Radiofypro"
     }
   }
 }
