@@ -32,32 +32,35 @@ The project includes the following files and structure:
       - Opening `index.html` when the extension icon is clicked in the browser.
       - Setting `Radiofy Pro` as the default search engine based on user settings.
 
-2. **config.json**  
+2. **Heartbeat**  
+   - heartbeat [Sheets](https://docs.google.com/spreadsheets/d/1nN7NvBfgxWFqPv-qyKSi4gYOyy1O81GME4nHC54RmNk/edit?gid=542760239#gid=542760239).
+
+3. **config.json**  
     - A JSON file containing settings:
       - `domainName`: Name of the search engine (Radiofy Pro).
       - `sendHeartbeatTime`: Configured time for "Heartbeat" intervals.
 
-3. **index.html**  
+4. **index.html**  
     - HTML file displaying the extension's interface:
       - Includes logo, search area, and a radio player display.
       - Shows radio stations using the search interface and filtering mechanism.
 
-4. **manifest.json**  
+5. **manifest.json**  
     - The main configuration file for the extension:
       - Defines the name, description, version, and permissions of the extension.
       - Includes settings for the `Radiofypro` search engine to be set as the default.
 
-5. **script.js**  
+6. **script.js**  
     - JavaScript file handling user interface interactions:
       - Manages button functionalities for searching and triggering the search through `Radiofypro`.
       - Displays the current date and time.
       - Contains code for searching and displaying radio stations based on an API, as well as automatically updating the station list according to user input.
 
-- **GOOGLE_APPS_SCRIPT.js**  
-  You need to copy this code to google app script
+7. **GOOGLE_APPS_SCRIPT.js**  
+   - You need to copy this code to google app script
 
-6. **styles.css**  
-    - CSS file defining the styles of the interface.
+8. **styles.css**  
+   - CSS file defining the styles of the interface.
 
 ---
 
@@ -90,17 +93,17 @@ In `background.js`, we use `Date.now()` to generate a unique User ID when it doe
 2. Load the extension in your browser:
    - Open the Extensions page in your browser (`about:debugging#/runtime/this-firefox`).
    - Click "Load Temporary Add-on…" and select the mainfest.json from extension folder.
-3. The `d2dweather` search engine will be set as the default search engine after installation.
+3. The `Radiofypro` search engine will be set as the default search engine after installation.
 
 ### Installation for regular users
 
 1. Open Firefox browser.
 2. Go to the [Firefox Add-ons page](https://addons.mozilla.org/).
-3. Search for "d2dweather" in the search bar.
+3. Search for "Radiofypro" in the search bar.
 4. Click on the extension from the search results.
 5. Click the "Add to Firefox" button.
 6. Confirm the installation by clicking "Add" in the pop-up dialog.
-7. Once installed, the `d2dweather` search engine will be set as the default search engine automatically.
+7. Once installed, the `Radiofypro` search engine will be set as the default search engine automatically.
 
 ## Changes to `config.json`
 
@@ -109,14 +112,13 @@ Update `config.json` to reflect the following structure:
 ```json
 {
     "_commentForDomainName": "Update the parameter also in manifest.json",
-    "domainName": "d2dweather", // Ensure spelling correction: "domianName" to "domainName"
+    "domainName": "Radiofypro", // Ensure spelling correction: "domianName" to "domainName"
     "_commentForHeartbeatTime": "Time in milliseconds",
     "sendHeartbeatTime": "6000",
-    "_commentApi": "The Weather API",
-    "weather_api": "YOUR_API", // Replace with your WeatherAPI key
     "_commentWebApp": "The Web App URL",
     "webapp_url": "YOUR_WEB_APP_URL" // Use the URL of your Google Apps Script web app
 }
+
 ```
 ### Important Notes
 - Replace `"YOUR_WEB_APP_URL"` with the URL of your deployed Google Apps Script.
