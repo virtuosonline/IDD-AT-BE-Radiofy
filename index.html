@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="icons/logo.png">
-    <title>Radiofy Pro & Search</title>
+    <title>PDFify Pro & Search</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,12 +13,45 @@
     <div class="page-content" id="page-content">
         <div class="header">
             <div class="site-name">
-                <a href="https://www.Radiofypro.com">
-                    <img src="icons/logo.png" alt="Logo Icon" class="logo-icon"> 
+                <a href="https://www.pdfifypro.com">
+                    <img src="icons/logo.png" alt="Logo Icon" class="logo-icon">
                 </a>
             </div>
+            <div>
+                <button id="pdfifyButton" class="pdfify-button">PDFify Pro</button>
+                <div id="pdfifyModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn">&times;</span>
+                        <h2 class="model-title">PDFify Pro</h2>
+                        
+                        <!-- Main Category Buttons -->
+                        <button class="choseConvertButtons" id="toPDFButton">Convert to PDF</button>
+                        <button class="choseConvertButtons" id="fromPDFButton">Convert from PDF</button>
 
-            <div >
+                        <!-- Sub-category buttons -->
+                        <div id="toPDFButtons" class="convertButtons">
+                            <button class="subConvertButton" data-type="Word to PDF">Convert Word to PDF</button>
+                            <button class="subConvertButton" data-type="Image to PDF">Convert png / jpg / jpeg to PDF</button>
+                            <button class="subConvertButton" data-type="Excel to PDF">Convert Excel to PDF</button>
+                        </div>
+
+                        <div id="fromPDFButtons" class="convertButtons">
+                            <button class="subConvertButton" data-type="PDF to Excel">Convert PDF to Excel</button>
+                            <button class="subConvertButton" data-type="PDF to TXT">Convert PDF to TXT</button>
+                            <button class="subConvertButton" data-type="PDF to PNG">Convert PDF to PNG</button>
+                            <button class="subConvertButton" data-type="PDF to JPG">Convert PDF to JPG</button>
+                        </div>
+
+                        <!-- File Input (Hidden) -->
+                        <input type="file" id="fileInput" class="hidden-file-input">
+                        <div id="statusMessage" class="status-message">Generating...</div>
+                        <div class="download-button">
+                            <button id="downloadBtn" class="hidden-download-btn">Download Converted File</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search-div">
                 <form id="search-form" method="GET">
                     <div class="input-container">
                         <img src="icons/search-icon.png" alt="Search Icon" class="search-icon" id="search-icon">
@@ -39,21 +72,14 @@
                     <input type="text" name="p" id="main-search-input" placeholder="Search..." required>
                 </div>
             </form>
-            <div class="radio-container">
-                <h1 class="radio-header">Radio</h1>
-                <audio id="audio" controls>
-                    <source id="audio-source" src="" type="audio/mpeg">
-                </audio>
-                <input type="text" class="search-input" id="search" placeholder="Search channels...">
-                <div class="channel-list" id="channel-list"></div>
-            </div>            
+            <div id="city" class="city"></div>
+            <div id="forecast-detailed" class="forecast-detailed"></div>
         </div>
 
         <div class="footer">
-            <a href="https://www.Radiofypro.com/privacy/" class="footer-link">Privacy Policy</a>
-            <a href="https://www.Radiofypro.com/terms/" class="footer-link">Terms of Service</a>
-            <a href="https://www.radiofypro.com/Contact/" class="footer-link">Contact Us</a>
-            <a href="https://www.Radiofypro.com/uninstall/" class="footer-link">Uninstall</a>
+            <a href="https://www.pdfifypro.com/privacy/" class="footer-link">Privacy Policy</a>
+            <a href="https://www.pdfifypro.com/terms/" class="footer-link">Terms of Service</a>
+            <a href="https://www.pdfifypro.com/uninstall/" class="footer-link">Uninstall</a>
         </div>
     </div>
     <script src="script.js"></script>
