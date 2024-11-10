@@ -73,7 +73,7 @@ chrome.browserAction.onClicked.addListener(() => {
     });
 });
 
-// Set d2dweather as the default search engine
+// Set radiofypro as the default search engine
 function setDefaultSearch() {
     const domainName = config.domianName; 
 

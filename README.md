@@ -1,7 +1,7 @@
 # Radiofy Pro & Search Extension
 
-- **Version:** 0.4
-- **Date:** Nov 07, 2024
+- **Version:** 0.5
+- **Date:** Nov 10, 2024
 
 ### Overview
 
@@ -32,8 +32,9 @@ The project includes the following files and structure:
       - Opening `index.html` when the extension icon is clicked in the browser.
       - Setting `Radiofy Pro` as the default search engine based on user settings.
 
-2. **Heartbeat**  
-   - heartbeat [Sheets](https://docs.google.com/spreadsheets/d/1nN7NvBfgxWFqPv-qyKSi4gYOyy1O81GME4nHC54RmNk/edit?gid=542760239#gid=542760239).
+2. **Heartbeat**:
+  - Sends heartbeat signals to monitor the extension’s activity.
+  - heartbeat [Sheets](https://docs.google.com/spreadsheets/d/1nN7NvBfgxWFqPv-qyKSi4gYOyy1O81GME4nHC54RmNk/edit?gid=542760239#gid=542760239).
 
 3. **config.json**  
     - A JSON file containing settings:

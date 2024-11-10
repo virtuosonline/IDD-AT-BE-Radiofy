@@ -1,4 +1,4 @@
-const tabName = 'TAB_NAME';
+const tabName = 'Heartbeats';
 const scriptProp = PropertiesService.getScriptProperties();
 
 function intialSetup() {
@@ -18,9 +18,10 @@ function doPost(e) {
         const nextRow = sheet.getLastRow() + 1;
 
         const newRow = headers.map(function(header) {
-            // Store the current date and time for the 'Date' header
+            // Store the current date and time for the 'Date' header in New York time zone
             if (header === 'Date') {
-                return new Date(); // This will return the current date and time
+                const newYorkDate = Utilities.formatDate(new Date(), "America/New_York", "yyyy-MM-dd HH:mm:ss");
+                return newYorkDate;
             }
             return e.parameter[header];
         });

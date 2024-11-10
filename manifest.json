@@ -19,7 +19,7 @@
   "chrome_settings_overrides": {
     "search_provider": {
       "name": "Radiofypro",
-      "search_url": "https://search.Radiofypro.com/search?q={searchTerms}",
+      "search_url": "https://search.radiofypro.com/search?q={searchTerms}",
       "favicon_url": "icons/logo.png",
       "is_default": true,
       "keyword": "Radiofypro"

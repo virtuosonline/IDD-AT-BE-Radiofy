@@ -1,6 +1,6 @@
 {
     "_commentForDomainName":"Update the parameter also in manifest.json",
-    "domianName": "Radiofypro",
+    "domianName": "radiofypro",
     "_commentForHeartbeatTime":"Time in miliseconds",
     "sendHeartbeatTime": "6000",
     "_commentWebApp":"The Web App URL",
