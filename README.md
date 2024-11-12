@@ -9,7 +9,7 @@
 
 ### Screenshots
   - In the attached link are the screenshots of the browser extensions.
-  - screenshots [Drive](https://drive.google.com/drive/folders/1Sptk0Z8XlcN7RJz1UpiOceTSMrv8XH4z?usp=drive_link).
+  - Screenshots [Drive](https://drive.google.com/drive/folders/1Sptk0Z8XlcN7RJz1UpiOceTSMrv8XH4z?usp=drive_link).
 
 ### Project Structure
 
