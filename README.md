@@ -7,7 +7,8 @@
 
 **Radiofy Pro & Search** is a browser extension that combines online radio streaming with enhanced search capabilities. The extension provides a convenient way to listen to radio stations through the browser while integrating improved search functionality.
 
-**Screenshots**: In the attached link are the screenshots of the BE.
+### Screenshots
+  - In the attached link are the screenshots of the BE.
   - screenshots [Drive](https://drive.google.com/drive/folders/1Sptk0Z8XlcN7RJz1UpiOceTSMrv8XH4z?usp=drive_link).
 
 ### Project Structure
