@@ -5,20 +5,10 @@ function initEventListeners() {
 
 // Initialize search fields and their functionality
 function initSearchFields() {
-    const searchIcon = document.getElementById('search-icon');
     const mainSearchIcon = document.getElementById('main-search-icon');
-    const searchInput = document.getElementById('search-input');
     const mainSearchInput = document.getElementById('main-search-input');
 
-    searchIcon.addEventListener('click', () => performSearch(searchInput));
     mainSearchIcon.addEventListener('click', () => performSearch(mainSearchInput));
-
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            performSearch(searchInput);
-        }
-    });
 
     mainSearchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
@@ -42,12 +32,6 @@ function performSearch(inputField) {
     }
 }
 
-// Update current date and time
-function updateDateTime() {
-    const now = new Date();
-    document.getElementById('current-date').textContent = now.toLocaleDateString(); 
-    document.getElementById('current-time').textContent = now.toLocaleTimeString(); 
-}
 
 const audio = document.getElementById('audio');
 const audioSource = document.getElementById('audio-source');
@@ -107,8 +91,6 @@ searchRadioHeaderInput.addEventListener('input', () => {
 // Start the extension
 function startExtension() {
     initEventListeners();
-    setInterval(updateDateTime, 1000);
-    updateDateTime(); 
     fetchRadioStations();
 }
 
