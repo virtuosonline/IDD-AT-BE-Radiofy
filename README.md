@@ -1,6 +1,6 @@
 # Radiofy Pro & Search Extension
 
-- **Version:** 1.0
+- **Version:** 2.0
 - **Date:** 31/12/2024
 - **Updated:** We improved the design, changed colors, removed search from the header, and updated screenshots.
 
