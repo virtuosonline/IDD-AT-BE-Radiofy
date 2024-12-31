@@ -1,7 +1,7 @@
 # Radiofy Pro & Search Extension
 
-- **Version:** 0.5
-- **Date:** Nov 10, 2024
+- **Version:** 1.0
+- **Date:** 31/12/2024 
 
 ### Overview
 
@@ -58,7 +58,6 @@ The project includes the following files and structure:
 6. **script.js**  
     - JavaScript file handling user interface interactions:
       - Manages button functionalities for searching and triggering the search through `Radiofypro`.
-      - Displays the current date and time.
       - Contains code for searching and displaying radio stations based on an API, as well as automatically updating the station list according to user input.
 
 7. **GOOGLE_APPS_SCRIPT.js**  
