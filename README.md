@@ -75,8 +75,6 @@ The project includes the following files and structure:
 8. **styles.css**  
    - CSS file defining the styles of the interface.
 
----
-
 ## Using the `radio-browser API`
 
 - The extension uses the `Radio Browser API` to access a list of radio stations.
