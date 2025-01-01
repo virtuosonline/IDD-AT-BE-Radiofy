@@ -1,8 +1,16 @@
 # Radiofy Pro & Search Extension
 
-- **Version:** 1.1
-- **Date:** 31/12/2024
+- **Version:** 1.2
+- **Date:** 01/01/2025
+
+## Changes Log
+
+#### V1.2 - 01/01/2025
+- **Updated:** We changed the click state of the Search Channels box.
+
+#### V1.1 - 31/12/2024
 - **Updated:** We improved the design, changed colors, removed search from the header, and updated screenshots.
+
 
 ### Overview
 
